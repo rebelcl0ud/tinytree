@@ -1,0 +1,38 @@
+@import "variables";
+
+header {
+	background: $taupe;
+	color: $lightStone;
+	overflow: auto; /* shows bg color */
+	padding: 40px 150px;
+
+	.logo {
+		float: left;
+		font-size: 1.2rem;
+	}
+
+	nav {
+		float: right;
+		
+		a {
+			color: $lightStone;
+			text-decoration: none;
+			padding: 5px 15px;
+			text-transform: lowercase;
+			font-weight: 300;
+			font-size: 1rem;
+			
+			&:hover {
+				color: $mutedGreen;
+			}
+			&.register-btn {
+				background: $mutedGreen;
+				border: 2px solid $mutedGreen;
+				border-radius: 5px;
+				padding: 5px 20px;
+				text-align: center;
+				color: white;
+			}
+		}
+	}
+}

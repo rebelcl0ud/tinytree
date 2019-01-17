@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import Header from './Header';
 
 class App extends Component {
 	constructor() {
 		super();
 	}
 	render() {
-		return <h1>hebwo</h1>;
+		return (
+			<div>
+				<Header />
+			</div>
+		);
 	}
 }
 
