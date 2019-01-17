@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-class Layout extends Component {
+class App extends Component {
 	constructor() {
 		super();
-		this.state = {
-			name: 'Joe'
-		};
 	}
-	clickedBtn = () => {};
-	async test() {}
 	render() {
 		return <h1>hebwo</h1>;
 	}
@@ -17,4 +12,4 @@ class Layout extends Component {
 
 const app = document.getElementById('app');
 
-ReactDOM.render(<Layout />, app);
+ReactDOM.render(<App />, app);

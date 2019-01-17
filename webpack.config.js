@@ -16,7 +16,7 @@ compress.unused = true;
 module.exports = env => {
 	return {
 		entry: {
-			FirstComp: './assets/js/components/FirstComp.js',
+			TinyTree: './assets/js/tinytree/TinyTree.js',
 			// main: './assets/js/main.js'
 		},
 		output: {
