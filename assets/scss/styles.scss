@@ -2,8 +2,10 @@
 @import "variables";
 @import "reset";
 @import "listings";
+@import "content-area";
 
-body {
+*, html, body {
+	box-sizing: border-box;
 	font-family: 'Roboto', sans-serif;
   /*line-height: 1;*/
   /*background: white;*/
