@@ -1,0 +1,67 @@
+@import "variables";
+
+#filter {
+	background: $lightStone;
+	width: 25%;
+	max-width: 250px;
+
+	.insideFilter {
+		padding: 25px;
+		max-width: 250px;
+	}
+
+	h2 {
+		margin-bottom: 25px;
+		text-transform: lowercase;
+		font-weight: 500;
+		font-size: 1rem;
+		color: $darkBrown;
+		letter-spacing: 1px;
+	}
+
+	select {
+		/*-webkit-appearance: none; 
+   	-moz-appearance: none;*/
+   	/*appearance: none;*/       /* remove default arrow */
+   /*	background-image: url(...);*/   /* add custom arrow */
+		background: transparent;
+		border-radius: 5px;
+		padding: 5px;
+		font-size: 12px;
+		font-weight: 400;
+		color: $darkBrown;
+		display: block;
+		margin-bottom: 25px;
+		width: 100%;
+	}
+
+	.filters {
+		.title {
+			color: white;
+			letter-spacing: 1px;
+			font-size: 1rem;
+			display: block;
+			margin-bottom: 15px;
+		}
+
+		input[type="text"]{
+			border-radius: 5px;
+			padding: 0.5rem;
+			width: 50%;
+			display: inline-block;
+			margin-bottom: 15px;
+		}
+
+		&.features {
+			label {
+				display: block;
+				width: 100%;
+				padding: 5px 0;
+
+				input[type="checkbox"] {
+					float: right;
+				}
+			}	
+		}
+	}
+}
