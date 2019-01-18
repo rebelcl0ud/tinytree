@@ -4,6 +4,8 @@
 	background: $lightStone;
 	width: 25%;
 	max-width: 250px;
+	display: inline-block;
+	float: left;
 
 	.insideFilter {
 		padding: 25px;
@@ -37,7 +39,7 @@
 
 	.filters {
 		.title {
-			color: white;
+			color: $offwhite;
 			letter-spacing: 1px;
 			font-size: 1rem;
 			display: block;
@@ -68,5 +70,73 @@
 
 /* - - - LISTINGS AREA - - - */
 #listings {
+	background: $offwhite;
+	width: 75%;
+	display: inline-block;
+	float: left;
+	padding: 25px 15px;
 
+	.search-area {
+		input[type="text"] {
+			width: 70%;
+			background: transparent;
+			font-size: 1.5rem;
+			border: none;
+			border-bottom: 1px solid $darkBrown;
+			margin-bottom: 25px;
+			color: $lightStone;
+		}
+	}
+	
+	.sort-area {
+		display: inline-block;
+		margin-bottom: 25px;
+		width: 70%;
+		
+		.results {
+			font-size: 0.8rem;
+			color: $lightBrown;
+			display: inline-block;
+		}
+
+		.sort-options {
+			display: inline-block;
+			float: right;
+			
+			.sortby {
+				display: inline-block;
+				font-size: 0.8rem;
+				background: transparent;
+				border: none;
+				margin-right: 15px;
+				vertical-align: top;
+			}
+
+			.view {
+				display: inline-block;
+				color: $lightBrown;
+
+				.fas {
+					margin-right: 15px;
+				}
+			}
+		}
+	}
+
+	.pagination {
+		display: inline-block;
+
+		.pagination-num {
+			li {
+				list-style: none;
+				display: inline-block;
+				padding: 10px;
+
+				&:hover {
+					background: $mutedGreen;
+				}
+			}
+		}
+		
+	}
 }

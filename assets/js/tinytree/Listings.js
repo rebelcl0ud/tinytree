@@ -6,13 +6,13 @@ export default class Listings extends Component {
 	}
 	render() {
 		return (
-			<section className="listings">
+			<section id="listings">
 				<section className="search-area">
-					<input type="text" name="search" />
+					<input type="text" name="search" placeholder="search listings" />
 				</section>
 
 				<section className="sort-area">
-					<div>13 results found</div>
+					<div className="results">13 results found</div>
 					<div className="sort-options">
 						<select name="sortby" className="sortby">
 							<option value="price-asc">Highest Price</option>
@@ -24,6 +24,7 @@ export default class Listings extends Component {
 						</div>
 					</div>
 				</section>
+
 				<section className="listings-results">
 					<div className="listing">
 						<div className="listing-img">
@@ -62,7 +63,18 @@ export default class Listings extends Component {
 						</div>
 					</div>
 				</section>
-				<section className="pagination" />
+
+				<section className="pagination">
+					<ul className="pagination-num">
+						<li>prev</li>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+						<li>next</li>
+					</ul>
+				</section>
 			</section>
 		);
 	}
