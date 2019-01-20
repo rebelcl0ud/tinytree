@@ -1,5 +1,12 @@
 @import "variables";
 
+#content-area {
+	width: 100%;
+	overflow: auto;
+	background: black;
+	min-height: 100vh;
+}
+
 #filter {
 	background: $lightStone;
 	width: 25%;
@@ -123,6 +130,94 @@
 		}
 	}
 
+	.listings-results {
+		margin-bottom: 50px;
+
+		.listing {
+			background: white;
+			width: 33.33%;
+			border-radius: 5px;
+			-webkit-box-shadow: 0px 15px 15px -7px rgba(212,212,212,1);
+			-moz-box-shadow: 0px 5px 15px -7px rgba(212,212,212,1);
+			box-shadow: 0px 5px 15px -7px rgba(212,212,212,1);
+		}
+
+		.listing-img {
+			color: white;
+			padding: 15px;
+			position: relative;
+			background: url("http://tinyhousepins.com/wp-content/uploads/2013/08/might-micro-house-on-wheels-for-sale-01-600x450.jpg") no-repeat center center; 
+  		-webkit-background-size: cover;
+  		-moz-background-size: cover;
+  		-o-background-size: cover;
+  		background-size: cover;
+  		min-height: 200px;
+  		-webkit-border-top-left-radius: 5px;
+			-webkit-border-top-right-radius: 5px;
+			-moz-border-radius-topleft: 5px;
+			-moz-border-radius-topright: 5px;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+
+			.location-details {
+				padding: 25px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				display: inline-block;
+				-webkit-border-top-left-radius: 5px;
+				-webkit-border-top-right-radius: 5px;
+				-moz-border-radius-topleft: 5px;
+				-moz-border-radius-topright: 5px;
+				border-top-left-radius: 5px;
+				border-top-right-radius: 5px;
+				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff8b32+0,ffc089+100 */
+				background: rgba(255,139,50,0.8); /* Old browsers */
+				background: -moz-linear-gradient(-45deg, rgba(255,139,50,0.8) 0%, rgba(255,192,137,0.8) 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(-45deg, rgba(255,139,50,0.8) 0%,rgba(255,192,137,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(135deg, rgba(255,139,50,0.8) 0%,rgba(255,192,137,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8b32', endColorstr='#ffc089',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+			}
+			
+			.user-img {
+				display: inline-block;
+				float: left;
+				margin-bottom: 50px;
+			}
+
+			.user-details {
+				display: block;
+				float: right;
+				margin-bottom: 50px;
+
+				.user-name {
+					display: block;
+				}
+				.date-posted {
+					display: block;
+				}
+			}
+
+			.listing-details {
+				display: inline-block;
+
+				.area {
+					display: block;
+				}
+
+				.beds {
+					display: block;
+				}
+
+				.furnished {
+					display: block;
+				}
+			}
+		}
+	}
+
 	.pagination {
 		display: inline-block;
 
@@ -136,7 +231,6 @@
 					background: $mutedGreen;
 				}
 			}
-		}
-		
+		}	
 	}
 }
