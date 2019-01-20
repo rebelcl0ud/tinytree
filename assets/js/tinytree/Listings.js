@@ -37,7 +37,7 @@ export default class Listings extends Component {
 								</div>
 								<div className="listing-details">
 									<div className="area">
-										<i class="fas fa-ruler-combined" />
+										<i className="fas fa-ruler-combined" />
 										<span>800ft&sup2;</span>
 									</div>
 									<div className="beds">
