@@ -28,9 +28,9 @@ export default class Listings extends Component {
 				<section className="listings-results">
 					<div className="listing">
 						<div className="listing-img">
-							<span className="location-name">location name</span>
+							<span className="location-name">Tennessee</span>
 							<div className="location-details">
-								<div className="user-img">photo here</div>
+								<div className="user-img" />
 								<div className="user-details">
 									<span className="user-name">woo travels</span>
 									<span className="date-posted">07/07/17</span>
@@ -38,7 +38,7 @@ export default class Listings extends Component {
 								<div className="listing-details">
 									<div className="area">
 										<i className="fas fa-ruler-combined" />
-										<span>800ft&sup2;</span>
+										<span>800 ft&sup2;</span>
 									</div>
 									<div className="beds">
 										<i className="fas fa-bed" />
@@ -49,6 +49,8 @@ export default class Listings extends Component {
 										<span>fully furnished</span>
 									</div>
 								</div>
+
+								<div className="view-btn">view listing</div>
 							</div>
 						</div>
 						<div className="listing-bottom">
