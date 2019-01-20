@@ -146,7 +146,8 @@
 			color: white;
 			padding: 15px;
 			position: relative;
-			background: url("http://tinyhousepins.com/wp-content/uploads/2013/08/might-micro-house-on-wheels-for-sale-01-600x450.jpg") no-repeat center center; 
+			background: 
+				url("http://tinyhousepins.com/wp-content/uploads/2013/08/might-micro-house-on-wheels-for-sale-01-600x450.jpg") no-repeat center center; 
   		-webkit-background-size: cover;
   		-moz-background-size: cover;
   		-o-background-size: cover;
@@ -159,7 +160,25 @@
 			border-top-left-radius: 5px;
 			border-top-right-radius: 5px;
 
+			&:hover {
+				.location-name {
+					opacity: 0;
+				}
+				.location-details {
+					opacity: 1;
+				}
+			}
+
+			.location-name {
+				position: absolute;
+				bottom: 15px;
+				opacity: 1;
+				transition: opacity 0.5s ease-in-out;
+			}
+
 			.location-details {
+				transition: opacity 0.5s ease-in-out;
+				opacity: 0;
 				padding: 25px;
 				position: absolute;
 				top: 0;
@@ -179,42 +198,79 @@
 				background: -webkit-linear-gradient(-45deg, rgba(255,139,50,0.8) 0%,rgba(255,192,137,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
 				background: linear-gradient(135deg, rgba(255,139,50,0.8) 0%,rgba(255,192,137,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8b32', endColorstr='#ffc089',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-			}
-			
-			.user-img {
-				display: inline-block;
-				float: left;
-				margin-bottom: 50px;
-			}
 
-			.user-details {
-				display: block;
-				float: right;
-				margin-bottom: 50px;
-
-				.user-name {
-					display: block;
-				}
-				.date-posted {
-					display: block;
-				}
-			}
-
-			.listing-details {
-				display: inline-block;
-
-				.area {
-					display: block;
+				.user-img {
+					display: inline-block;
+					float: left;
+					/*margin-bottom: 50px;*/
+					width: 40px;
+					height: 40px;
+					border-radius: 50%;
+					border: 2px solid white;
+					background: 
+						url("http://tinyhousepins.com/wp-content/uploads/2013/08/might-micro-house-on-wheels-for-sale-01-600x450.jpg") no-repeat center center; 
+		  			-webkit-background-size: cover;
+		  			-moz-background-size: cover;
+		  			-o-background-size: cover;
+		  			background-size: cover;
 				}
 
-				.beds {
-					display: block;
+				.user-details {
+					/*float: right;*/
+					margin-bottom: 15px;
+					vertical-align: top;
+					display: inline-block;
+					margin-left: 25px;
+
+					.user-name {
+						display: block;
+						font-weight: 300;
+						font-size: 1rem;
+						margin-bottom: 5px;
+					}
+					
+					.date-posted {
+						display: block;
+						color: rgba(255, 255, 255, 0.8);
+						font-size: 0.85rem;
+					}
 				}
 
-				.furnished {
-					display: block;
+				.listing-details {
+					font-size: 0.85rem;
+					margin-left: 65px;
+					margin-bottom: 15px;
+					.fas {
+						display: inline-block;
+						margin-right: 10px;
+					}
+					span {
+						display: inline-block;
+						margin-bottom: 5px;
+						font-weight: 300;
+						vertical-align: top;
+						position: relative;
+						top: 1px;
+					}
 				}
-			}
+
+				.view-btn {
+					background: black;
+					color: white;
+					padding: 10px;
+					font-size: 0.85rem;
+					font-weight: 300;
+					text-align: center;
+					border-radius: 5px;
+					max-width: 150px;
+					transition: background 0.2s ease-in-out;
+					&:hover {
+						background: $mutedGreen;
+						color: white;
+						cursor: pointer;
+					}
+				}
+			}		
 		}
 	}
 
