@@ -26,42 +26,167 @@ export default class Listings extends Component {
 				</section>
 
 				<section className="listings-results">
-					<div className="listing">
-						<div className="listing-img">
-							<span className="location-name">Tennessee</span>
-							<div className="location-details">
-								<div className="user-img" />
-								<div className="user-details">
-									<span className="user-name">woo travels</span>
-									<span className="date-posted">07/07/17</span>
-								</div>
-								<div className="listing-details">
-									<div className="area">
-										<i className="fas fa-ruler-combined" />
-										<span>800 ft&sup2;</span>
+					<div className="listing-col">
+						<div className="listing">
+							<div className="listing-img">
+								<span className="location-name">Tennessee</span>
+								<div className="location-details">
+									<div className="user-img" />
+									<div className="user-details">
+										<span className="user-name">woo travels</span>
+										<span className="date-posted">07/07/17</span>
 									</div>
-									<div className="beds">
-										<i className="fas fa-bed" />
-										<span>sleeps 4</span>
+									<div className="listing-details">
+										<div className="area">
+											<i className="fas fa-ruler-combined" />
+											<span>800 ft&sup2;</span>
+										</div>
+										<div className="beds">
+											<i className="fas fa-bed" />
+											<span>sleeps 4</span>
+										</div>
+										<div className="furnished">
+											<i className="fas fa-couch" />
+											<span>fully furnished</span>
+										</div>
 									</div>
-									<div className="furnished">
-										<i className="fas fa-couch" />
-										<span>fully furnished</span>
-									</div>
-								</div>
 
-								<div className="view-btn">view listing</div>
+									<div className="view-btn">view listing</div>
+								</div>
+							</div>
+							<div className="listing-bottom">
+								<span className="listing-rate">
+									<i className="fas fa-dollar-sign" />
+									rate/daily
+								</span>
+								<span className="listing-location">
+									<i className="fas fa-map-marker-alt" />
+									area | neighborhood
+								</span>
 							</div>
 						</div>
-						<div className="listing-bottom">
-							<span className="listing-rate">
-								<i className="fas fa-dollar-sign" />
-								rate/daily
-							</span>
-							<span className="listing-location">
-								<i className="fas fa-map-marker-alt" />
-								area | neighborhood
-							</span>
+					</div>
+
+					<div className="listing-col">
+						<div className="listing">
+							<div className="listing-img">
+								<span className="location-name">Tennessee</span>
+								<div className="location-details">
+									<div className="user-img" />
+									<div className="user-details">
+										<span className="user-name">woo travels</span>
+										<span className="date-posted">07/07/17</span>
+									</div>
+									<div className="listing-details">
+										<div className="area">
+											<i className="fas fa-ruler-combined" />
+											<span>800 ft&sup2;</span>
+										</div>
+										<div className="beds">
+											<i className="fas fa-bed" />
+											<span>sleeps 4</span>
+										</div>
+										<div className="furnished">
+											<i className="fas fa-couch" />
+											<span>fully furnished</span>
+										</div>
+									</div>
+
+									<div className="view-btn">view listing</div>
+								</div>
+							</div>
+							<div className="listing-bottom">
+								<span className="listing-rate">
+									<i className="fas fa-dollar-sign" />
+									rate/daily
+								</span>
+								<span className="listing-location">
+									<i className="fas fa-map-marker-alt" />
+									area | neighborhood
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<div className="listing-col">
+						<div className="listing">
+							<div className="listing-img">
+								<span className="location-name">Tennessee</span>
+								<div className="location-details">
+									<div className="user-img" />
+									<div className="user-details">
+										<span className="user-name">woo travels</span>
+										<span className="date-posted">07/07/17</span>
+									</div>
+									<div className="listing-details">
+										<div className="area">
+											<i className="fas fa-ruler-combined" />
+											<span>800 ft&sup2;</span>
+										</div>
+										<div className="beds">
+											<i className="fas fa-bed" />
+											<span>sleeps 4</span>
+										</div>
+										<div className="furnished">
+											<i className="fas fa-couch" />
+											<span>fully furnished</span>
+										</div>
+									</div>
+
+									<div className="view-btn">view listing</div>
+								</div>
+							</div>
+							<div className="listing-bottom">
+								<span className="listing-rate">
+									<i className="fas fa-dollar-sign" />
+									rate/daily
+								</span>
+								<span className="listing-location">
+									<i className="fas fa-map-marker-alt" />
+									area | neighborhood
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<div className="listing-col">
+						<div className="listing">
+							<div className="listing-img">
+								<span className="location-name">Tennessee</span>
+								<div className="location-details">
+									<div className="user-img" />
+									<div className="user-details">
+										<span className="user-name">woo travels</span>
+										<span className="date-posted">07/07/17</span>
+									</div>
+									<div className="listing-details">
+										<div className="area">
+											<i className="fas fa-ruler-combined" />
+											<span>800 ft&sup2;</span>
+										</div>
+										<div className="beds">
+											<i className="fas fa-bed" />
+											<span>sleeps 4</span>
+										</div>
+										<div className="furnished">
+											<i className="fas fa-couch" />
+											<span>fully furnished</span>
+										</div>
+									</div>
+
+									<div className="view-btn">view listing</div>
+								</div>
+							</div>
+							<div className="listing-bottom">
+								<span className="listing-rate">
+									<i className="fas fa-dollar-sign" />
+									rate/daily
+								</span>
+								<span className="listing-location">
+									<i className="fas fa-map-marker-alt" />
+									area | neighborhood
+								</span>
+							</div>
 						</div>
 					</div>
 				</section>
