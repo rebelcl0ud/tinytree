@@ -3,7 +3,64 @@ import React, { Component } from 'react';
 export default class Listings extends Component {
 	constructor() {
 		super();
+
+		this.loopListings = this.loopListings.bind(this);
 	}
+
+	loopListings() {
+		const { listingsData } = this.props;
+
+		return listingsData.map((listing, index) => {
+			return (
+				<div className="listing-col" key={index}>
+					<div className="listing">
+						<div
+							className="listing-img"
+							style={{
+								background: `url("${listing.image}") no-repeat center center`
+							}}
+						>
+							<span className="location-name">{listing.address}</span>
+							<div className="location-details">
+								<div className="user-img" />
+								<div className="user-details">
+									<span className="user-name">woo travels</span>
+									<span className="date-posted">07/07/17</span>
+								</div>
+								<div className="listing-details">
+									<div className="area">
+										<i className="fas fa-ruler-combined" />
+										<span>{listing.area} ft&sup2;</span>
+									</div>
+									<div className="beds">
+										<i className="fas fa-bed" />
+										<span>{listing.rooms} BR</span>
+									</div>
+									<div className="furnished">
+										<i className="fas fa-couch" />
+										<span>fully furnished</span>
+									</div>
+								</div>
+
+								<div className="view-btn">view listing</div>
+							</div>
+						</div>
+						<div className="listing-bottom">
+							<span className="listing-rate">
+								<i className="fas fa-dollar-sign" />
+								{listing.price}
+							</span>
+							<span className="listing-location">
+								<i className="fas fa-map-marker-alt" />
+								{listing.city}, {listing.state}
+							</span>
+						</div>
+					</div>
+				</div>
+			);
+		});
+	}
+
 	render() {
 		return (
 			<section id="listings">
@@ -25,48 +82,7 @@ export default class Listings extends Component {
 					</div>
 				</section>
 
-				<section className="listings-results">
-					<div className="listing-col">
-						<div className="listing">
-							<div className="listing-img">
-								<span className="location-name">Tennessee</span>
-								<div className="location-details">
-									<div className="user-img" />
-									<div className="user-details">
-										<span className="user-name">woo travels</span>
-										<span className="date-posted">07/07/17</span>
-									</div>
-									<div className="listing-details">
-										<div className="area">
-											<i className="fas fa-ruler-combined" />
-											<span>800 ft&sup2;</span>
-										</div>
-										<div className="beds">
-											<i className="fas fa-bed" />
-											<span>sleeps 4</span>
-										</div>
-										<div className="furnished">
-											<i className="fas fa-couch" />
-											<span>fully furnished</span>
-										</div>
-									</div>
-
-									<div className="view-btn">view listing</div>
-								</div>
-							</div>
-							<div className="listing-bottom">
-								<span className="listing-rate">
-									<i className="fas fa-dollar-sign" />
-									rate/daily
-								</span>
-								<span className="listing-location">
-									<i className="fas fa-map-marker-alt" />
-									area | neighborhood
-								</span>
-							</div>
-						</div>
-					</div>
-				</section>
+				<section className="listings-results">{this.loopListings()}</section>
 
 				<section className="pagination">
 					<ul className="pagination-num">
