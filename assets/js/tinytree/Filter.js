@@ -29,7 +29,7 @@ export default class Filter extends Component {
 					</div>
 					<div className="filters features">
 						<span className="title">features</span>
-						<label for="accessible">
+						<label htmlFor="accessible">
 							handicap-accessible
 							<input
 								type="checkbox"
@@ -38,7 +38,7 @@ export default class Filter extends Component {
 								className="accessible"
 							/>
 						</label>
-						<label for="pet-friendly">
+						<label htmlFor="pet-friendly">
 							pet-friendly
 							<input
 								type="checkbox"
@@ -47,7 +47,7 @@ export default class Filter extends Component {
 								className="pet-friendly"
 							/>
 						</label>
-						<label for="parking">
+						<label htmlFor="parking">
 							parking
 							<input
 								type="checkbox"
