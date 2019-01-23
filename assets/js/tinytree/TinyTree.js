@@ -9,16 +9,42 @@ class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			listingsData
+			listingsData,
+			min_price: 0,
+			max_price: 0,
+			accessible: false,
+			pet_friendly: false,
+			parking: false
 		};
+
+		this.onChange = this.onChange.bind(this);
 	}
+
+	onChange(event) {
+		let name = event.target.name;
+		// because there is diff event ie: checkbox, if/else statement
+		let value =
+			event.target.type === 'checkbox'
+				? event.target.checked
+				: event.target.value;
+
+		this.setState(
+			{
+				[name]: value
+			},
+			() => {
+				console.log(this.state);
+			}
+		);
+		console.log(event.target.value);
+	}
+
 	render() {
-		console.log(this.state.listingsData);
 		return (
 			<div>
 				<Header />
 				<section id="content-area">
-					<Filter />
+					<Filter onChange={this.onChange} globalState={this.state} />
 					<Listings listingsData={this.state.listingsData} />
 				</section>
 			</div>
