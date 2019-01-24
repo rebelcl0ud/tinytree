@@ -9,9 +9,13 @@ class App extends Component {
 	constructor() {
 		super();
 		this.state = {
+			location: 'All',
+			rooms: 0,
+			status: 'All',
+			type: 'All',
 			listingsData,
 			min_price: 0,
-			max_price: 0,
+			max_price: 50000,
 			accessible: false,
 			pet_friendly: false,
 			parking: false,
@@ -44,9 +48,32 @@ class App extends Component {
 	filteredData() {
 		let newData = this.state.listingsData.filter(item => {
 			return (
-				item.price >= this.state.min_price && item.price <= this.state.max_price
+				item.price >= this.state.min_price &&
+				item.price <= this.state.max_price &&
+				item.rooms >= this.state.rooms
 			);
 		});
+
+		// location; goes by state
+		if (this.state.location !== 'All') {
+			newData = newData.filter(item => {
+				return item.state === this.state.location;
+			});
+		}
+
+		// status; rent | buy | vacation
+		if (this.state.status !== 'All') {
+			newData = newData.filter(item => {
+				return item.status === this.state.status;
+			});
+		}
+
+		// type; tinyhouse or treehouse
+		if (this.state.type !== 'All') {
+			newData = newData.filter(item => {
+				return item.type === this.state.type;
+			});
+		}
 
 		this.setState({
 			filteredData: newData
