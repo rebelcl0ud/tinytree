@@ -19,11 +19,13 @@ class App extends Component {
 			accessible: false,
 			pet_friendly: false,
 			parking: false,
-			filteredData: listingsData
+			filteredData: listingsData,
+			populateFormData: ''
 		};
 
 		this.onChange = this.onChange.bind(this);
 		this.filteredData = this.filteredData.bind(this);
+		this.populateForm = this.populateForm.bind(this);
 	}
 
 	onChange(event) {
@@ -39,7 +41,7 @@ class App extends Component {
 				[name]: value
 			},
 			() => {
-				console.log(this.state);
+				// console.log(this.state);
 				this.filteredData();
 			}
 		);
@@ -80,12 +82,61 @@ class App extends Component {
 		});
 	}
 
+	populateForm() {
+		// - - - state - - -
+		let states = this.state.listingsData.map(item => {
+			return item.state;
+		});
+		// this keeps unique finds, no repeats
+		states = new Set(states);
+		states = [...states];
+
+		// - - - rooms; # - - -
+		let rooms = this.state.listingsData.map(item => {
+			return item.rooms;
+		});
+		rooms = new Set(rooms);
+		rooms = [...rooms];
+
+		// - - - status; rent | buy | vacation - - -
+		let status = this.state.listingsData.map(item => {
+			return item.status;
+		});
+		status = new Set(status);
+		status = [...status];
+
+		// - - - type; tinyhouse or treehouse - - -
+		let types = this.state.listingsData.map(item => {
+			return item.type;
+		});
+		types = new Set(types);
+		types = [...types];
+
+		this.setState(
+			{
+				populateFormData: {
+					states,
+					rooms,
+					status,
+					types
+				}
+			},
+			() => {
+				console.log(this.state);
+			}
+		);
+	}
+
 	render() {
 		return (
 			<div>
 				<Header />
 				<section id="content-area">
-					<Filter onChange={this.onChange} globalState={this.state} />
+					<Filter
+						onChange={this.onChange}
+						globalState={this.state}
+						populateFormAction={this.populateForm}
+					/>
 					<Listings listingsData={this.state.filteredData} />
 				</section>
 			</div>
