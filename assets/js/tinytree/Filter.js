@@ -9,39 +9,46 @@ export default class Filter extends Component {
 			<section id="filter">
 				<div className="insideFilter">
 					<h2>FILTER</h2>
+					<label htmlFor="location">location</label>
 					<select
 						name="location"
 						className="filters location"
 						onChange={this.props.onChange}
 					>
+						<option value="All">All</option>
 						<option value="Tennessee">Tennessee</option>
 						<option value="Kentucky">Kentucky</option>
 						<option value="Montana">Montana</option>
 					</select>
+					<label htmlFor="roooms">rooms</label>
 					<select
 						name="rooms"
 						className="filters rooms"
 						onChange={this.props.onChange}
 					>
-						<option value="0">0BR</option>
-						<option value="1">1BR</option>
-						<option value="2">2BR</option>
+						<option value="0">0BR+</option>
+						<option value="1">1BR+</option>
+						<option value="2">2BR+</option>
 						<option value="3">3BR+</option>
 					</select>
+					<label htmlFor="status">status</label>
 					<select
 						name="status"
 						className="filters status"
 						onChange={this.props.onChange}
 					>
+						<option value="All">All</option>
 						<option value="vacation">vacation</option>
 						<option value="rent">rent</option>
 						<option value="buy">buy</option>
 					</select>
+					<label htmlFor="type">type</label>
 					<select
 						name="type"
 						className="filters type"
 						onChange={this.props.onChange}
 					>
+						<option value="All">All</option>
 						<option>treehouse</option>
 						<option>tinyhouse</option>
 					</select>
