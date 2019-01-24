@@ -3,7 +3,76 @@ import React, { Component } from 'react';
 export default class Filter extends Component {
 	constructor() {
 		super();
+
+		this.states = this.states.bind(this);
+		this.rooms = this.rooms.bind(this);
+		this.status = this.status.bind(this);
+		this.types = this.types.bind(this);
 	}
+
+	componentDidMount() {
+		console.log('-- locked and loaded --');
+		this.props.populateFormAction();
+	}
+
+	states() {
+		// if statement prevents erroring out undefined
+		if (this.props.globalState.populateFormData.states !== undefined) {
+			let { states } = this.props.globalState.populateFormData;
+			// console.log(states);
+			states = states.sort();
+			return states.map(item => {
+				return (
+					<option key={item} value={item}>
+						{item}
+					</option>
+				);
+			});
+		}
+	}
+
+	rooms() {
+		if (this.props.globalState.populateFormData.rooms !== undefined) {
+			let { rooms } = this.props.globalState.populateFormData;
+			rooms = rooms.sort((a, b) => a - b);
+			return rooms.map(item => {
+				return (
+					<option key={item} value={item}>
+						{item}BR+
+					</option>
+				);
+			});
+		}
+	}
+
+	status() {
+		if (this.props.globalState.populateFormData.status !== undefined) {
+			let { status } = this.props.globalState.populateFormData;
+			status = status.sort();
+			return status.map(item => {
+				return (
+					<option key={item} value={item}>
+						{item}
+					</option>
+				);
+			});
+		}
+	}
+
+	types() {
+		if (this.props.globalState.populateFormData.types !== undefined) {
+			let { types } = this.props.globalState.populateFormData;
+			types = types.sort();
+			return types.map(item => {
+				return (
+					<option key={item} value={item}>
+						{item}
+					</option>
+				);
+			});
+		}
+	}
+
 	render() {
 		return (
 			<section id="filter">
@@ -16,20 +85,15 @@ export default class Filter extends Component {
 						onChange={this.props.onChange}
 					>
 						<option value="All">All</option>
-						<option value="Tennessee">Tennessee</option>
-						<option value="Kentucky">Kentucky</option>
-						<option value="Montana">Montana</option>
+						{this.states()}
 					</select>
-					<label htmlFor="roooms">rooms</label>
+					<label htmlFor="rooms">rooms</label>
 					<select
 						name="rooms"
 						className="filters rooms"
 						onChange={this.props.onChange}
 					>
-						<option value="0">0BR+</option>
-						<option value="1">1BR+</option>
-						<option value="2">2BR+</option>
-						<option value="3">3BR+</option>
+						{this.rooms()}
 					</select>
 					<label htmlFor="status">status</label>
 					<select
@@ -38,9 +102,7 @@ export default class Filter extends Component {
 						onChange={this.props.onChange}
 					>
 						<option value="All">All</option>
-						<option value="vacation">vacation</option>
-						<option value="rent">rent</option>
-						<option value="buy">buy</option>
+						{this.status()}
 					</select>
 					<label htmlFor="type">type</label>
 					<select
@@ -49,8 +111,7 @@ export default class Filter extends Component {
 						onChange={this.props.onChange}
 					>
 						<option value="All">All</option>
-						<option>treehouse</option>
-						<option>tinyhouse</option>
+						{this.types()}
 					</select>
 					<div className="filters price">
 						<span className="title">price</span>
