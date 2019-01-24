@@ -14,10 +14,12 @@ class App extends Component {
 			max_price: 0,
 			accessible: false,
 			pet_friendly: false,
-			parking: false
+			parking: false,
+			filteredData: listingsData
 		};
 
 		this.onChange = this.onChange.bind(this);
+		this.filteredData = this.filteredData.bind(this);
 	}
 
 	onChange(event) {
@@ -34,9 +36,21 @@ class App extends Component {
 			},
 			() => {
 				console.log(this.state);
+				this.filteredData();
 			}
 		);
-		console.log(event.target.value);
+	}
+
+	filteredData() {
+		let newData = this.state.listingsData.filter(item => {
+			return (
+				item.price >= this.state.min_price && item.price <= this.state.max_price
+			);
+		});
+
+		this.setState({
+			filteredData: newData
+		});
 	}
 
 	render() {
@@ -45,7 +59,7 @@ class App extends Component {
 				<Header />
 				<section id="content-area">
 					<Filter onChange={this.onChange} globalState={this.state} />
-					<Listings listingsData={this.state.listingsData} />
+					<Listings listingsData={this.state.filteredData} />
 				</section>
 			</div>
 		);
