@@ -9,7 +9,7 @@ var listingsData = [
 		type: 'tinyhouse',
 		price: 25000,
 		area: 800,
-		features: ['parking', 'pet-friendly', 'parking'],
+		features: ['parking', 'pet-friendly', 'accessible'],
 		image:
 			'http://tinyhousepins.com/wp-content/uploads/2013/08/might-micro-house-on-wheels-for-sale-01-600x450.jpg'
 	},
@@ -23,7 +23,7 @@ var listingsData = [
 		type: 'treehouse',
 		price: 15000,
 		area: 1000,
-		features: ['parking', 'pet-friendly', 'parking'],
+		features: ['parking', 'pet-friendly'],
 		image:
 			'http://tinyhomesforsale.weebly.com/uploads/4/1/0/3/41030213/7617293.jpg?297'
 	},
@@ -33,11 +33,11 @@ var listingsData = [
 		state: 'Wisconsin',
 		locationName: '',
 		rooms: 2,
-		status: 'buy',
+		status: 'vacation',
 		type: 'tinyhouse',
 		price: 5000,
 		area: 1800,
-		features: ['parking', 'pet-friendly', 'parking'],
+		features: ['parking', 'pet-friendly'],
 		image: 'http://www.simplesolarhomes.com/images/cabin.jpg'
 	},
 	{
@@ -50,7 +50,7 @@ var listingsData = [
 		type: 'tinyhouse',
 		price: 15000,
 		area: 1800,
-		features: ['parking', 'pet-friendly', 'parking'],
+		features: ['parking', 'pet-friendly', 'accessible'],
 		image:
 			'http://colorcountrypainting.com/wp-content/uploads/2010/08/DSCo4818smalll.jpg'
 	},
@@ -59,12 +59,12 @@ var listingsData = [
 		city: 'Emerald City',
 		state: 'Kansas',
 		locationName: '',
-		rooms: 3,
+		rooms: 0,
 		status: 'buy',
 		type: 'tinyhouse',
 		price: 45000,
 		area: 2800,
-		features: ['parking', 'pet-friendly', 'parking'],
+		features: ['parking', 'pet-friendly'],
 		image: 'https://i.ytimg.com/vi/td9XIHdujwI/hqdefault.jpg'
 	}
 ];
