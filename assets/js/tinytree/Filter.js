@@ -20,7 +20,6 @@ export default class Filter extends Component {
 		if (this.props.globalState.populateFormData.states !== undefined) {
 			let { states } = this.props.globalState.populateFormData;
 			// console.log(states);
-			states = states.sort();
 			return states.map(item => {
 				return (
 					<option key={item} value={item}>
@@ -34,7 +33,6 @@ export default class Filter extends Component {
 	rooms() {
 		if (this.props.globalState.populateFormData.rooms !== undefined) {
 			let { rooms } = this.props.globalState.populateFormData;
-			rooms = rooms.sort((a, b) => a - b);
 			return rooms.map(item => {
 				return (
 					<option key={item} value={item}>
@@ -48,7 +46,6 @@ export default class Filter extends Component {
 	status() {
 		if (this.props.globalState.populateFormData.status !== undefined) {
 			let { status } = this.props.globalState.populateFormData;
-			status = status.sort();
 			return status.map(item => {
 				return (
 					<option key={item} value={item}>
@@ -62,7 +59,6 @@ export default class Filter extends Component {
 	types() {
 		if (this.props.globalState.populateFormData.types !== undefined) {
 			let { types } = this.props.globalState.populateFormData;
-			types = types.sort();
 			return types.map(item => {
 				return (
 					<option key={item} value={item}>

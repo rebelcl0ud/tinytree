@@ -90,6 +90,7 @@ class App extends Component {
 		// this keeps unique finds, no repeats
 		states = new Set(states);
 		states = [...states];
+		states = states.sort();
 
 		// - - - rooms; # - - -
 		let rooms = this.state.listingsData.map(item => {
@@ -97,6 +98,7 @@ class App extends Component {
 		});
 		rooms = new Set(rooms);
 		rooms = [...rooms];
+		rooms = rooms.sort();
 
 		// - - - status; rent | buy | vacation - - -
 		let status = this.state.listingsData.map(item => {
@@ -104,6 +106,7 @@ class App extends Component {
 		});
 		status = new Set(status);
 		status = [...status];
+		status = status.sort();
 
 		// - - - type; tinyhouse or treehouse - - -
 		let types = this.state.listingsData.map(item => {
@@ -111,6 +114,7 @@ class App extends Component {
 		});
 		types = new Set(types);
 		types = [...types];
+		types = types.sort();
 
 		this.setState(
 			{
