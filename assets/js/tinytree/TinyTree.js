@@ -28,6 +28,17 @@ class App extends Component {
 		this.populateForm = this.populateForm.bind(this);
 	}
 
+	componentDidMount() {
+		console.log('-- TinyTree component locked and loaded --');
+		let listingsData = this.state.listingsData.sort((a, b) => {
+			return a.price - b.price;
+		});
+
+		this.setState({
+			listingsData
+		});
+	}
+
 	onChange(event) {
 		let name = event.target.name;
 		// because there is diff event ie: checkbox, if/else statement
