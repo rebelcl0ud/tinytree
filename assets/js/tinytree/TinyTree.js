@@ -9,6 +9,7 @@ class App extends Component {
 	constructor() {
 		super();
 		this.state = {
+			sortby: 'price_asc',
 			location: 'All',
 			rooms: 0,
 			status: 'All',
@@ -52,7 +53,7 @@ class App extends Component {
 				[name]: value
 			},
 			() => {
-				// console.log(this.state);
+				console.log(this.state);
 				this.filteredData();
 			}
 		);
@@ -85,6 +86,17 @@ class App extends Component {
 		if (this.state.type !== 'All') {
 			newData = newData.filter(item => {
 				return item.type === this.state.type;
+			});
+		}
+
+		// price dropdown; highest / lowest
+		if (this.state.sortby == 'price_asc') {
+			newData = newData.sort((a, b) => {
+				return a.price - b.price;
+			});
+		} else {
+			newData = newData.sort((a, b) => {
+				return b.price - a.price;
 			});
 		}
 
@@ -135,10 +147,10 @@ class App extends Component {
 					status,
 					types
 				}
-			},
-			() => {
-				console.log(this.state);
 			}
+			// () => {
+			// 	console.log(this.state);
+			// }
 		);
 	}
 
@@ -152,7 +164,11 @@ class App extends Component {
 						globalState={this.state}
 						populateFormAction={this.populateForm}
 					/>
-					<Listings listingsData={this.state.filteredData} />
+					<Listings
+						listingsData={this.state.filteredData}
+						onChange={this.onChange}
+						globalState={this.state}
+					/>
 				</section>
 			</div>
 		);
