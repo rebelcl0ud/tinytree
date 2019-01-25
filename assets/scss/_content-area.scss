@@ -144,12 +144,6 @@
 	.listings-results {
 		margin-bottom: 50px;
 
-		.listing-col {
-			width: 33.3%;
-			display: inline-block;
-			padding: 0 15px 15px 15px;
-		}
-
 		.listing {
 			background: white;
 			/*width: 33.33%;*/
@@ -339,5 +333,18 @@
 				}
 			}
 		}	
+	}
+
+	.listing-col {
+		width: 33.3%;
+		display: inline-block;
+		padding: 0 15px 15px 15px;
+	}
+
+
+	.listing-col-full {
+		width: 100%;
+		display: inline-block;
+		padding: 0 15px 15px 15px;
 	}
 }
