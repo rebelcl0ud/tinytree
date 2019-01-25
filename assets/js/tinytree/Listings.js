@@ -121,7 +121,13 @@ export default class Listings extends Component {
 		return (
 			<section id="listings">
 				<section className="search-area">
-					<input type="text" name="search" placeholder="search listings" />
+					<input
+						type="text"
+						name="search"
+						placeholder="search listings (city or state)"
+						onChange={this.props.onChange}
+						value={this.props.globalState.search}
+					/>
 				</section>
 
 				<section className="sort-area">
