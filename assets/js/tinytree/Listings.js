@@ -131,7 +131,9 @@ export default class Listings extends Component {
 				</section>
 
 				<section className="sort-area">
-					<div className="results">13 results found</div>
+					<div className="results">
+						{this.props.globalState.filteredData.length} results found
+					</div>
 					<div className="sort-options">
 						<select
 							name="sortby"
