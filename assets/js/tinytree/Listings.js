@@ -15,53 +15,105 @@ export default class Listings extends Component {
 		}
 
 		return listingsData.map((listing, index) => {
-			return (
-				<div className="listing-col" key={index}>
-					<div className="listing">
-						<div
-							className="listing-img"
-							style={{
-								background: `url("${listing.image}") no-repeat center center`
-							}}
-						>
-							<span className="location-name">{listing.address}</span>
-							<div className="location-details">
-								<div className="user-img" />
-								<div className="user-details">
-									<span className="user-name">woo travels</span>
-									<span className="date-posted">07/07/17</span>
-								</div>
-								<div className="listing-details">
-									<div className="area">
-										<i className="fas fa-ruler-combined" />
-										<span>{listing.area} ft&sup2;</span>
+			// - - - grid view - - -
+			if (this.props.globalState.view === 'grid') {
+				return (
+					<div className="listing-col" key={index}>
+						<div className="listing">
+							<div
+								className="listing-img"
+								style={{
+									background: `url("${listing.image}") no-repeat center center`
+								}}
+							>
+								<span className="location-name">{listing.address}</span>
+								<div className="location-details">
+									<div className="user-img" />
+									<div className="user-details">
+										<span className="user-name">woo travels</span>
+										<span className="date-posted">07/07/17</span>
 									</div>
-									<div className="beds">
-										<i className="fas fa-bed" />
-										<span>{listing.rooms} BR</span>
+									<div className="listing-details">
+										<div className="area">
+											<i className="fas fa-ruler-combined" />
+											<span>{listing.area} ft&sup2;</span>
+										</div>
+										<div className="beds">
+											<i className="fas fa-bed" />
+											<span>{listing.rooms} BR</span>
+										</div>
+										<div className="furnished">
+											<i className="fas fa-couch" />
+											<span>fully furnished</span>
+										</div>
 									</div>
-									<div className="furnished">
-										<i className="fas fa-couch" />
-										<span>fully furnished</span>
-									</div>
-								</div>
 
-								<div className="view-btn">view listing</div>
+									<div className="view-btn">view listing</div>
+								</div>
+							</div>
+							<div className="listing-bottom">
+								<span className="listing-rate">
+									<i className="fas fa-dollar-sign" />
+									{listing.price}
+								</span>
+								<span className="listing-location">
+									<i className="fas fa-map-marker-alt" />
+									{listing.city}, {listing.state}
+								</span>
 							</div>
 						</div>
-						<div className="listing-bottom">
-							<span className="listing-rate">
-								<i className="fas fa-dollar-sign" />
-								{listing.price}
-							</span>
-							<span className="listing-location">
-								<i className="fas fa-map-marker-alt" />
-								{listing.city}, {listing.state}
-							</span>
+					</div>
+				);
+			} else {
+				// - - - inline view - - -
+				return (
+					<div className="listing-col-full" key={index}>
+						<div className="listing">
+							<div
+								className="listing-img"
+								style={{
+									background: `url("${listing.image}") no-repeat center center`
+								}}
+							>
+								<span className="location-name">{listing.address}</span>
+								<div className="location-details">
+									<div className="user-img" />
+									<div className="user-details">
+										<span className="user-name">woo travels</span>
+										<span className="date-posted">07/07/17</span>
+									</div>
+									<div className="listing-details">
+										<div className="area">
+											<i className="fas fa-ruler-combined" />
+											<span>{listing.area} ft&sup2;</span>
+										</div>
+										<div className="beds">
+											<i className="fas fa-bed" />
+											<span>{listing.rooms} BR</span>
+										</div>
+										<div className="furnished">
+											<i className="fas fa-couch" />
+											<span>fully furnished</span>
+										</div>
+									</div>
+
+									<div className="view-btn">view listing</div>
+								</div>
+							</div>
+							<div className="listing-bottom">
+								<span className="listing-rate">
+									<i className="fas fa-dollar-sign" />
+									{listing.price}
+								</span>
+								<span className="listing-location">
+									<i className="fas fa-map-marker-alt" />
+									{listing.city}, {listing.state}
+								</span>
+							</div>
 						</div>
 					</div>
-				</div>
-			);
+				);
+			}
 		});
 	}
 
@@ -88,8 +140,20 @@ export default class Listings extends Component {
 							</option>
 						</select>
 						<div className="view">
-							<i className="fas fa-th-list" />
-							<i className="fas fa-th" />
+							<i
+								className="fas fa-th"
+								onClick={e => {
+									e.preventDefault();
+									this.props.onChangeView('grid');
+								}}
+							/>
+							<i
+								className="fas fa-th-list"
+								onClick={e => {
+									e.preventDefault();
+									this.props.onChangeView('list');
+								}}
+							/>
 						</div>
 					</div>
 				</section>
