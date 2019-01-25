@@ -30,8 +30,8 @@ export default class Listings extends Component {
 								<div className="location-details">
 									<div className="user-img" />
 									<div className="user-details">
-										<span className="user-name">woo travels</span>
-										<span className="date-posted">07/07/17</span>
+										<span className="user-name">{listing.user}</span>
+										<span className="date-posted">{listing.date}</span>
 									</div>
 									<div className="listing-details">
 										<div className="area">
@@ -44,7 +44,7 @@ export default class Listings extends Component {
 										</div>
 										<div className="furnished">
 											<i className="fas fa-couch" />
-											<span>fully furnished</span>
+											<span>{listing.furnished}</span>
 										</div>
 									</div>
 
@@ -79,8 +79,8 @@ export default class Listings extends Component {
 								<div className="location-details">
 									<div className="user-img" />
 									<div className="user-details">
-										<span className="user-name">woo travels</span>
-										<span className="date-posted">07/07/17</span>
+										<span className="user-name">{listing.user}</span>
+										<span className="date-posted">{listing.date}</span>
 									</div>
 									<div className="listing-details">
 										<div className="area">
@@ -93,7 +93,7 @@ export default class Listings extends Component {
 										</div>
 										<div className="furnished">
 											<i className="fas fa-couch" />
-											<span>fully furnished</span>
+											<span>{listing.furnished}</span>
 										</div>
 									</div>
 
