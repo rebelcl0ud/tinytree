@@ -9,6 +9,7 @@ class App extends Component {
 	constructor() {
 		super();
 		this.state = {
+			view: 'grid',
 			sortby: 'price_asc',
 			location: 'All',
 			rooms: 0,
@@ -27,6 +28,7 @@ class App extends Component {
 		this.onChange = this.onChange.bind(this);
 		this.filteredData = this.filteredData.bind(this);
 		this.populateForm = this.populateForm.bind(this);
+		this.onChangeView = this.onChangeView.bind(this);
 	}
 
 	componentDidMount() {
@@ -56,6 +58,15 @@ class App extends Component {
 				console.log(this.state);
 				this.filteredData();
 			}
+		);
+	}
+
+	onChangeView(view) {
+		this.setState(
+			{
+				view: view
+			},
+			() => console.log(this.state)
 		);
 	}
 
@@ -168,6 +179,7 @@ class App extends Component {
 						listingsData={this.state.filteredData}
 						onChange={this.onChange}
 						globalState={this.state}
+						onChangeView={this.onChangeView}
 					/>
 				</section>
 			</div>
