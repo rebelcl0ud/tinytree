@@ -9,6 +9,7 @@ class App extends Component {
 	constructor() {
 		super();
 		this.state = {
+			search: '',
 			view: 'grid',
 			sortby: 'price_asc',
 			location: 'All',
@@ -108,6 +109,17 @@ class App extends Component {
 		} else {
 			newData = newData.sort((a, b) => {
 				return b.price - a.price;
+			});
+		}
+
+		// search bar
+		if (this.state.search !== '') {
+			newData = newData.filter(item => {
+				let city = item.city.toLowerCase();
+				let state = item.state.toLowerCase();
+				let searchText = this.state.search.toLowerCase();
+
+				return city.match(searchText) || state.match(searchText);
 			});
 		}
 
