@@ -123,6 +123,27 @@ class App extends Component {
 			});
 		}
 
+		// features; checkboxes; accessible
+		if (this.state.accessible !== false) {
+			newData = newData.filter(item => {
+				return item.features.includes('accessible');
+			});
+		}
+
+		// features; checkboxes; pet_friendly
+		if (this.state.pet_friendly !== false) {
+			newData = newData.filter(item => {
+				return item.features.includes('pet-friendly');
+			});
+		}
+
+		// features; checkboxes; parking
+		if (this.state.parking !== false) {
+			newData = newData.filter(item => {
+				return item.features.includes('parking');
+			});
+		}
+
 		this.setState({
 			filteredData: newData
 		});
